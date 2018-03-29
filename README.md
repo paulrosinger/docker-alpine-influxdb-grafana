@@ -10,11 +10,12 @@
 
 To build the Docker image:
 
+```
 docker build -t docker-alpine-influxdb-grafana .
-
+```
 
 To start the container:
-
+```
 docker run \
        --name docker-alpine-influxdb-grafana \
        -p 3000:3000 \
@@ -22,20 +23,25 @@ docker run \
        -p 8086:8086 \
        -p 8125:8125/udp \
        docker-alpine-influxdb-grafana
-
+```
 
 To stop the container:
 
+```
 docker stop docker-alpine-influxdb-grafana
-
+```
 
 ## Ports
 
-Container		Service
+```
+Container       Service 
 
-3000			grafana
-8083			influxdb-admin
-8086			influxdb
+3000            grafana     
+8083            influxdb-admin 
+8086            influxdb 
+```
+
+
 
 
 ## Grafana
