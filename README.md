@@ -5,7 +5,7 @@
 
 * Alpine:            3.7
 * InfluxDB:          1.5.1
-* Grafana:           5.0.5
+* Grafana:           5.0.4
 
 
 To build the Docker image:
