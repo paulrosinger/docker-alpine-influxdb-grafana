@@ -21,7 +21,7 @@ RUN apk add --no-cache --virtual .build-deps wget gnupg tar ca-certificates && \
     cp -a /usr/src/influxdb-*/* /usr/bin/ && \
     rm -rf *.tar.gz* /usr/src /root/.gnupg && \
     apk del .build-deps
-VOLUME ["/etc/influxdb"]
+VOLUME ["/etc/influxdb", "/var/lib/influxdb"]
 EXPOSE 8083 8086
 
 
@@ -49,7 +49,7 @@ RUN set -ex \
  && rm grafana-$GRAFANA_VERSION.linux-x64.tar.gz /etc/apk/keys/sgerrand.rsa.pub glibc-${GLIBC_VERSION}.apk \
  && chown -R grafana:grafana /grafana \
  && apk del curl
-VOLUME ["/grafana/conf", "/grafana/data"]
+VOLUME ["/grafana"]
 EXPOSE 3000
 
 # Install supervisord
